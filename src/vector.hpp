@@ -144,19 +144,19 @@ public:
 		 * a operator to check whether two iterators are same (pointing to the same memory address).
 		 */
 		bool operator==(const iterator &rhs) const {
-			return ptr_ == rhs.ptr_;
+			return ptr_ == rhs.ptr_ && vec_ == rhs.vec_;
 		}
 		bool operator==(const const_iterator &rhs) const {
-			return ptr_ == rhs.ptr_;
+			return ptr_ == rhs.ptr_ && vec_ == rhs.vec_;
 		}
 		/**
 		 * some other operator for iterator.
 		 */
 		bool operator!=(const iterator &rhs) const {
-			return ptr_ != rhs.ptr_;
+			return ptr_ != rhs.ptr_ || vec_ != rhs.vec_;
 		}
 		bool operator!=(const const_iterator &rhs) const {
-			return ptr_ != rhs.ptr_;
+			return ptr_ != rhs.ptr_ || vec_ != rhs.vec_;
 		}
 
 		T* operator->() const {
@@ -226,16 +226,16 @@ public:
 			return *ptr_;
 		}
 		bool operator==(const const_iterator &rhs) const {
-			return ptr_ == rhs.ptr_;
+			return ptr_ == rhs.ptr_ && vec_ == rhs.vec_;
 		}
 		bool operator==(const iterator &rhs) const {
-			return ptr_ == rhs.ptr_;
+			return ptr_ == rhs.ptr_ && vec_ == rhs.vec_;
 		}
 		bool operator!=(const const_iterator &rhs) const {
-			return ptr_ != rhs.ptr_;
+			return ptr_ != rhs.ptr_ || vec_ != rhs.vec_;
 		}
 		bool operator!=(const iterator &rhs) const {
-			return ptr_ != rhs.ptr_;
+			return ptr_ != rhs.ptr_ || vec_ != rhs.vec_;
 		}
 
 		const T* operator->() const {
